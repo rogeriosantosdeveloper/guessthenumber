@@ -31,13 +31,19 @@ class GameController {
 
   void adivinharNumero() {
     if (_tentativa == _numeroSecreto) {
-      _mensagem = 'Parabéns! Você acertou!';
+      _mensagem = 'Correto!! Adivinhou o Número!! Parábens!!!';
       _mensagemColor = Colors.green;
-    } else if (_tentativa! < _numeroSecreto!) {
-      _mensagem = 'Tente um número maior!';
+    } else if (_tentativa! > _max) {
+      _mensagem = 'O seu número é maior que o número máximo!!';
       _mensagemColor = Colors.red;
-    } else {
-      _mensagem = 'Tente um número menor!';
+    } else if (_tentativa! < _min) {
+      _mensagem = 'O seu número é menor que o número mínimo!!';
+      _mensagemColor = Colors.red;
+    } else if (_tentativa! < _numeroSecreto!) {
+      _mensagem = 'O número correto é maior que seu número!!';
+      _mensagemColor = Colors.red;
+    } else if (_tentativa! > _numeroSecreto!) {
+      _mensagem = 'O número correto é menor que seu número!!';
       _mensagemColor = Colors.red;
     }
   }

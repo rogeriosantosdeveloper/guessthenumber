@@ -25,16 +25,23 @@ class _TelaInicialState extends State<TelaInicial> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Jogo de Adivinhação'),
+        title: const Text(
+          'Trabalho Flutter - Guess de Number!!',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.teal,
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            GuessingWidget(gameController: _gameController),
-            const SizedBox(height: 20),
             DifficultyWidget(gameController: _gameController),
+            const SizedBox(height: 20),
+            GuessingWidget(gameController: _gameController),
             const SizedBox(height: 20),
             CustomIntervalWidget(gameController: _gameController),
           ],

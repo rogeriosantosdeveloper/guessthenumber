@@ -15,16 +15,20 @@ class DifficultyWidget extends StatelessWidget {
         child: Column(
           children: <Widget>[
             const Text(
-              'Escolha a dificuldade',
-              style: TextStyle(fontSize: 20),
+              'Nível de Dificuldade',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal,
+              ),
             ),
             const SizedBox(height: 20),
             DropdownButton<int>(
               value: gameController.dificuldade,
               items: const [
-                DropdownMenuItem(value: 1, child: Text('Fácil')),
-                DropdownMenuItem(value: 2, child: Text('Médio')),
-                DropdownMenuItem(value: 3, child: Text('Difícil')),
+                DropdownMenuItem(value: 1, child: Text('Easy')),
+                DropdownMenuItem(value: 2, child: Text('Normal')),
+                DropdownMenuItem(value: 3, child: Text('TryHard')),
               ],
               onChanged: (value) {
                 if (value != null) {

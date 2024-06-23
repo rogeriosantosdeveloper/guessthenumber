@@ -15,15 +15,20 @@ class GuessingWidget extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Text(
-              'Adivinhe o número entre ${gameController.min} e ${gameController.max}',
-              style: const TextStyle(fontSize: 20),
+              'O número esta entre ${gameController.min} e ${gameController.max}!!',
+              // ignore: prefer_const_constructors
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal,
+              ),
             ),
             const SizedBox(height: 20),
             TextField(
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Sua tentativa',
+                labelText: 'Seu Número',
               ),
               onChanged: (value) {
                 gameController.tentativa = int.tryParse(value);
@@ -35,7 +40,7 @@ class GuessingWidget extends StatelessWidget {
                 gameController.adivinharNumero();
                 (context as Element).markNeedsBuild();
               },
-              child: const Text('Adivinhar'),
+              child: const Text('Conferir Tentativa'),
             ),
             const SizedBox(height: 20),
             Text(
